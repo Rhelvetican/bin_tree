@@ -9,7 +9,8 @@ impl Node {
     pub fn new(val: i32) -> Self {
         Node {
             val,
-            ..Default::default()
+            right: None,
+            left: None,
         }
     }
     pub fn insert(&mut self, val: i32) {
@@ -50,5 +51,10 @@ impl Node {
             }
         }
         result
+    }
+    pub fn insert_vec(&mut self, vec: Vec<i32>) {
+        for val in vec {
+            self.insert(val);
+        }
     }
 }
